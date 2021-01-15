@@ -1,5 +1,5 @@
 # VIIT_Team_MNIST
-Repo to submit and review all the ML tasks for freshers
+Repo to submit and review all the ML tasks for freshers. 
 
 ## How to submit your task?
 - Fork this repository
