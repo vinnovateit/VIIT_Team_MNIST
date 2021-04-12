@@ -1,6 +1,8 @@
 import numpy as np
 from flask import Flask, request, render_template
 import pickle
+from sklearn.preprocessing import StandardScaler
+scaler=StandardScaler()
 
 
 app = Flask(__name__)
