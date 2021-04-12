@@ -47,6 +47,7 @@ def predict():
         
     final_features = [np.array(int_features)]
     final_features=np.array(final_features,dtype='object')
+    final_features[:,5:]=scaler.fit_transform(final_features[:,5:])
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
 
@@ -54,3 +55,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
