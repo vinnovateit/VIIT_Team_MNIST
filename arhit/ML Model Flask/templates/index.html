@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="main">
+	<h1>Predict House Price in California</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict" method="POST">
+        <!-- longitude	latitude	housing_median_age	total_rooms	total_bedrooms	population	households	median_income	avgRooms	avgBedrooms	pop_per_household	<1H OCEAN	INLAND	NEAR BAY	NEAR OCEAN-->
+    	<input type="text" name="longitude" placeholder="longitude"/>
+		<input type="text" name="latitude" placeholder="latitude"/>
+		<input type="text" name="housing_median_age" placeholder="housing_median_age"/>
+		<input type="text" name="total_rooms" placeholder="total_rooms"/>
+		<input type="text" name="total_bedrooms" placeholder="total_bedrooms"/>
+		<input type="text" name="population" placeholder="population"/>
+		<input type="text" name="households" placeholder="households"/>
+		<input type="text" name="median_income" placeholder="median_income"/>
+		<input type="text" name="avgRooms" placeholder="avgRooms"/>
+		<input type="text" name="avgBedrooms" placeholder="avgBedrooms"/>
+		<input type="text" name="pop_per_household" placeholder="pop_per_household"/>
+		<input type="text" name="OCEAN" placeholder="OCEAN"/>
+		<input type="text" name="INLAND" placeholder="INLAND"/>
+		<input type="text" name="NEAR BAY" placeholder="NEAR BAY"/>
+		<input type="text" name="NEAR OCEAN" placeholder="NEAR OCEAN"/>
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {% if prediction %}
+   <h2 class="text-warning">{{ prediction_text }}</h2>
+
+   {% endif %}
+
+ </div>
+
+
+</body>
+</html>
